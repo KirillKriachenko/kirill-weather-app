@@ -1,12 +1,27 @@
 import React from 'react';
 import './App.css';
+import Navigations from './components/homepage/HomeNavigation';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import HomePage from './pages/Home';
+import DetailsPage from './pages/Details';
 
-function App() {
+
+export interface IAppProps {}
+
+
+const App: React.FC<IAppProps> = (props) => {
   return (
-    <div className="App">
-      <h1>Hello React</h1>
-    </div>
-  );
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<HomePage />} />
+        <Route path='/details'>
+          <Route index element={<DetailsPage />} />
+          <Route path=':number' element={<DetailsPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  )
 }
 
 export default App;
+

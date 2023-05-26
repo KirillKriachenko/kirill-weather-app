@@ -1,0 +1,33 @@
+input:focus {
+    outline: none;
+}
+
+input {
+    all: unset;
+    background-color: aliceblue;
+    padding: 5px;
+    padding-left: 10px;
+    font-size: 25px;
+}
+
+
+.search-input{
+    padding-left: 10px !important;
+}
+
+button {
+    all: unset;
+}
+
+.search-btn {
+    background-color: aliceblue;
+    text-align: center;
+    font-size: 20px;
+    color: rgb(135, 137, 138);
+    width: 33px;
+    height: 33px;
+}
+
+.search-btn:hover {
+    color: black;
+}
