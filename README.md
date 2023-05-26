@@ -20,17 +20,18 @@
 
 
 ## Screenshots
-![Example screenshot](./src/assets/static/Example1.png)
-![Example screenshot](./src/assets/static/Example2.png)
+![Example screenshot](./src/assets/Example1.png)
+![Example screenshot](./src/assets/Example2.png)
 <!-- If you have screenshots you'd like to share, include them here. -->
 
 
 ## How To Run
 
-1. Go to [openweathermap.org](https://openweathermap.org/) and register.
-2. Copy generated API Key 
-3. In Folder root create .env file and make variable: REACT_APP_OPEN_WEATHER_KEY= YOUR_KEY_HERE
-4. In Console run: 
+1. Download project and extract.
+2. Go to [openweathermap.org](https://openweathermap.org/) and register.
+3. Copy generated API Key from: User -> My API keys -> Key
+4. In project folder root create .env file and make variable: **REACT_APP_OPEN_WEATHER_KEY**= YOUR_KEY_HERE
+5. In Console run: 
      - npm install 
      - npm start
 
