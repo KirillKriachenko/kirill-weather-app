@@ -10,7 +10,13 @@ interface IHomeDetails {
 
 const HomeDetails: React.FC<IHomeDetails> = (props) => {
 
-  console.log('Weather Details', props.weatherDetails)
+  const [favorite, setFavorite] = useState(false);
+
+  const addFavoriteHandler = () => {
+    setFavorite(true);
+    props.updateFavorites(props.weatherDetails);
+  }
+
   return (
     <div className="details-container">
       <div className="weather-data-container">
@@ -25,7 +31,7 @@ const HomeDetails: React.FC<IHomeDetails> = (props) => {
               justifyContent: "center",
             }}
           >
-            <h1 className="city-name">{props.weatherDetails?.city.name} {props.weatherDetails?.city.state}, {props.weatherDetails?.city.country} <button className="favorites-btn" onClick={() => props.updateFavorites(props.weatherDetails)}><FaStar height={30} width={30} color="yellow" /></button></h1>
+            <h1 className="city-name">{props.weatherDetails?.city.name} {props.weatherDetails?.city.state}, {props.weatherDetails?.city.country} <button className="favorites-btn" onClick={() => addFavoriteHandler()}>{ favorite == true ?  <FaStar height={30} width={30} color="yellow" /> : <FaRegStar height={30} width={30} color="yellow" />}</button></h1>
 
             <span style={{display:'flex', flexDirection:'row', alignItems:'center', fontSize:20, gap:15}}>
               <p>

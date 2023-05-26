@@ -22,7 +22,6 @@ const HomeNavigation: React.FC<IHomeNavigation> = (props) => {
   const [cityInput, setCityInput] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
   const [unitOfMeasure, setUnitOfMeasure] = useState<String>('metric')
-  // const [favorites, setFavorites] = useState([]);
 
   const onTextChangeHandler = (text: any) => {
     setErrorMsg('');
@@ -32,8 +31,6 @@ const HomeNavigation: React.FC<IHomeNavigation> = (props) => {
   const getWeatherData = (cityName: String, metricUnit: String) => {
     
     axios.get(`http://api.openweathermap.org/geo/1.0/direct?q=${cityInput}&appid=${API_KEY}`).then(async res => {
-
-    console.log(res.data);
 
       if (res.data.length === 0)
       { setErrorMsg('City with name: "' + cityName + '" - Not found') }
@@ -46,8 +43,6 @@ const HomeNavigation: React.FC<IHomeNavigation> = (props) => {
           lat: res.data[0].lat,
           lon: res.data[0].lon,
         }
-
-        console.log(city)
 
         let weather = await axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${city.lat}&lon=${city.lon}&appid=${API_KEY}&units=${metricUnit}`);
 
@@ -75,14 +70,12 @@ const HomeNavigation: React.FC<IHomeNavigation> = (props) => {
         })
       }
     }).catch(err => {
-      console.log("Error:", err.response.data.message);
       setErrorMsg(err.response.data.message)
     })
   }
 
   const changeMeasureUnitHandler = (unitType: String) => {
     setUnitOfMeasure(unitType);
-    console.log(unitType)
     if (cityInput) {
       getWeatherData(cityInput, unitType);
     }
@@ -116,7 +109,6 @@ const HomeNavigation: React.FC<IHomeNavigation> = (props) => {
         <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', width: '100%', marginTop: 20 }}>
           <input className='search-input' placeholder='Enter City Here' onChange={(obj) => onTextChangeHandler(obj.target.value)} />
           <button type='submit' className='search-btn' onClick={() => getWeatherData(cityInput, unitOfMeasure)}> <FaSearch /></button>
-          {/* <button type='submit' className='search-btn' onClick={() => navigate(`/details/${cityInput}`)}> <FaSearch /></button> */}
         </div>
       </div>
       <div style={{ display: 'flex', justifyContent: 'center', flexDirection: 'column', width: '100%', alignItems: 'center', marginTop: 20 }}>
@@ -125,7 +117,6 @@ const HomeNavigation: React.FC<IHomeNavigation> = (props) => {
         <h3 style={{ color: 'white', fontSize: 35 }}>Favorite Cities:</h3>
         {
           props.favoritesList.map((city, index) => {
-            console.log('Index', index)
             return <FavoriteCities key={index} dataKey={index} weatherData={city} onDelete={() => { props.removeFavorite(city) }} onClick={() => navigate(`/details/${city.city.name}/${city.city.lat}/${city.city.lon}`)} />
           })
         }

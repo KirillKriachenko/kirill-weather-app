@@ -58,7 +58,6 @@ const DetailsPage: React.FC<IDetailsPage> = (props) => {
         let result = await axios.get(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=${metric}`);
         result.data['unitMeasure'] = metric;
         setForecastData(result.data);
-        console.log(result.data)
     }
 
     const changeMeasureUnitHandler = (measureType:String) => {

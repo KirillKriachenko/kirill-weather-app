@@ -8,7 +8,6 @@ interface IDetailsPage {
 
 const DetailsCard: React.FC<IDetailsPage> = (props) => {
     const imgUrl = `https://openweathermap.org/img/wn/${props.cardData.weather[0].icon}@2x.png`;
-    // const imgUrl = `https://openweathermap.org/img/wn/${weather.data.weather[0].icon}@2x.png`;
 
     return (
         <div style={{ borderRadius: 20, width: 200, height: 250, padding: 10, backgroundColor: 'rgba(255,192,203,0.8)', textAlign:'center' }}>
