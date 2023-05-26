@@ -20,8 +20,8 @@
 
 
 ## Screenshots
-![Example screenshot](src/assets/Example1.png)
-![Example screenshot](/src/assets/Example2.png)
+![Example screenshot](src/assets/Example1.PNG)
+![Example screenshot](src/assets/Example2.PNG)
 <!-- If you have screenshots you'd like to share, include them here. -->
 
 
