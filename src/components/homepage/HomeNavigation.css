@@ -24,10 +24,22 @@ button {
     text-align: center;
     font-size: 20px;
     color: rgb(135, 137, 138);
-    width: 33px;
-    height: 33px;
+    width: 39px;
+    height: 39px;
 }
 
 .search-btn:hover {
     color: black;
+}
+
+.option{
+    color: rgb(187, 187, 187);
+    font-weight: 300;
+    text-decoration: none;
+}
+
+.active{
+    color: white;
+    font-weight: 600;
+    text-decoration: underline;
 }

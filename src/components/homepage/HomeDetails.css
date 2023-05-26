@@ -20,4 +20,12 @@
 
 .city-name{
     font-size: 40px;
+    display: inline-block;
+}
+
+.favorites-btn{
+    all:unset;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
 }
