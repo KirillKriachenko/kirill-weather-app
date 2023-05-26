@@ -15,7 +15,7 @@ const App: React.FC<IAppProps> = () => {
         <Route path='/' element={<HomePage />} />
         <Route path='/details'>
           <Route index element={<DetailsPage />} />
-          <Route path=':lat/:lon' element={<DetailsPage />} />
+          <Route path=':name/:lat/:lon' element={<DetailsPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

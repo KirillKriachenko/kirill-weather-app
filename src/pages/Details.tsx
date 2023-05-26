@@ -50,7 +50,7 @@ export interface IDetailsPage {
 const DetailsPage: React.FC<IDetailsPage> = (props) => {
 
     const [message, setMessage] = useState('');
-    const { lat, lon } = useParams();
+    const { name, lat, lon } = useParams();
     const [forecastData, setForecastData] = useState<IForecastData>();
     const [unitOfMeasure, setUnitOfMeasure] = useState<String>('metric');
 
@@ -73,10 +73,10 @@ const DetailsPage: React.FC<IDetailsPage> = (props) => {
 
     return <div className='details-bg' style={{textAlign:'center'}}>
         <h1 style={{color:'white'}}>
-            {forecastData?.city.name}
+            {name}
         </h1>
         <button className={ unitOfMeasure == 'metric' ? 'active': 'option'} style={{cursor:'pointer'}} onClick={() => changeMeasureUnitHandler('metric') }>Metric</button> | <button style={{cursor:'pointer'}} className={ unitOfMeasure == 'imperial' ? 'active': 'option'} onClick={() => changeMeasureUnitHandler('imperial')}>Imperial</button>
-        <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', gap: 10, marginTop:20 }}>
+        <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', gap: 10, marginTop:20, justifyContent:'space-evenly' }}>
             {
                 forecastData?.list.map((data, index) => {
                     return <DetailsCard key={index} cardData={data} unitMeasure = {forecastData.unitMeasure} />
