@@ -1,15 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Navigations from './components/homepage/HomeNavigation';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/Home';
 import DetailsPage from './pages/Details';
 
-
 export interface IAppProps {}
 
+const App: React.FC<IAppProps> = () => {
 
-const App: React.FC<IAppProps> = (props) => {
   return (
     <BrowserRouter>
       <Routes>

@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import {useParams} from 'react-router-dom';
 
-export interface IDetailsPage { };
+export interface IDetailsPage {
+    
+ };
 
 const DetailsPage: React.FC<IDetailsPage> = (props) => {
 

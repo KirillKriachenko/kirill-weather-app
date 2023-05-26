@@ -1,0 +1,23 @@
+.details-container{
+    height: 100vh;
+    display: flex;
+    flex-grow: 2;
+    position: relative;
+    overflow: hidden;
+}
+
+.weather-temperature{
+    font-size: 85px;
+}
+
+.weather-data-container{
+    position: absolute;
+    top: 60%;
+    left: 5%;
+    width: 100%;
+    color: white;
+}
+
+.city-name{
+    font-size: 40px;
+}
